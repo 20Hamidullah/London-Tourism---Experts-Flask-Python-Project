@@ -1,0 +1,353 @@
+{% extends "layout.html" %}
+{% block body %}
+<link 
+  rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+>
+<!-- Page Header
+        <header class="masthead" style="background-image: url('     {{ url_for('static', filename='assets/img/homebg.jpg') }}        ')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>{{params['landing_page_heading1']}}</h1>
+                            <span class="subheading">{{params['landing_page_subheading']}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        -->
+<link href="{{ url_for('static', filename='css/posts.css') }}" rel="stylesheet" />
+<style>
+  .whatsapp-float {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    width: 60px;
+    /* Default size */
+    height: 60px;
+    border-radius: 50%;
+    background-color: #25d366;
+    /* WhatsApp Green */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .whatsapp-float img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .whatsapp-float {
+      width: 50px;
+      height: 50px;
+      right: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .whatsapp-float {
+      width: 45px;
+      height: 45px;
+      right: 10px;
+    }
+  }
+</style>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+      aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+      aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+      aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+      aria-label="Slide 5"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6"
+      aria-label="Slide 7"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7"
+      aria-label="Slide 8"></button>
+
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{url_for('static', filename='assets/img/LondonEye.webp')}}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{{url_for('static', filename='assets/img/TowerOfLondon.webp')}}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{{url_for('static', filename='assets/img/TateModern.webp')}}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{{url_for('static', filename='assets/img/BritishMuseum.jpg')}}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{{url_for('static', filename='assets/img/National_Gallery_London.webp')}}" class="d-block w-100"
+        alt="...">
+    </div>
+
+    <div class="carousel-item">
+      <img src="{{url_for('static', filename='assets/img/TowerBridgeLondon.webp')}}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{{url_for('static', filename='assets/img/BuckinghamPalace.webp')}}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{{url_for('static', filename='assets/img/WestminsterAbbey.avif')}}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/447883777578?&text=Hello!%20I%20need%20your%20service."
+  class="whatsapp-float d-flex align-items-center justify-content-center" target="_blank">
+  <img src="{{ url_for('static', filename='assets/img/whatsappicon.png') }}" alt="WhatsApp Chat">
+</a>
+
+
+<div class="hero-wrap">
+
+  <div class="hero-top">
+    <div class="hero-tag">London transport</div>
+    <h2 class="hero-title">Seamless rides, safe journeys — explore London with ease</h2>
+    <p class="hero-body">Welcome to hassle-free travel in London. Our premium pick-and-drop
+      service ensures a smooth, comfortable experience for tourists from airport pickups
+      to hotel transfers and top attractions. Travel with confidence.
+    </p>
+  </div>
+
+  <div class="features">
+    <div class="feat"><span class="feat-dot"></span>Professional drivers</div>
+    <div class="feat"><span class="feat-dot"></span>Well-maintained vehicles</div>
+    <div class="feat"><span class="feat-dot"></span>24/7 customer support</div>
+    <div class="feat"><span class="feat-dot"></span>Punctual &amp; reliable</div>
+  </div>
+
+  <div class="contact-section">
+    <p class="contact-title">Contact us</p>
+    
+    <div class="contact-grid">
+
+  <!-- Email -->
+  <div class="contact-item">
+    <div class="contact-icon">
+      <i class="bi bi-envelope-fill"></i>
+    </div>
+    <div>
+      <p class="contact-label">Email</p>
+      <p class="contact-value">
+        <a href="mailto:sadat0667@gmail.com">........</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- WhatsApp -->
+  <div class="contact-item">
+    <div class="contact-icon">
+      <i class="bi bi-whatsapp"></i>
+    </div>
+    <div>
+      <p class="contact-label">WhatsApp</p>
+      <p class="contact-value">+........</p>
+    </div>
+  </div>
+
+</div>
+    <div class="cta-row">
+      <p class="cta-label">Have a question? Send us a message directly.</p>
+      <a href="/contact" class="cta-btn">Send a message</a>
+    </div>
+  </div>
+
+</div>
+<!-- Cards Designs -->
+ <!--
+<div class="card-deck" style="padding-top: 4%;">
+  <div class="card border-0 shadow-sm" style="margin-left: 4%;">
+    <img src="{{url_for('static', filename='assets/img/pickupservice.webp')}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Airport Pickup/Dropoff Service</h5>
+      <p class="card-text" style="text-align: justify;">We are ready to make your airport transfer smooth,
+        easy and stress-free.
+        We offer an affordable 24/7 airport transfer service across the London, whether you need a
+        late-night airport pickup service or an early-morning drop-off. The ease of travel with
+        professional drivers, clean vehicles and competitive prices will allow you to enjoy it!
+        Book your airport transfer today and leave the rest to us!
+      </p>
+    </div>
+  </div>
+  <div class="card border-0 shadow-sm">
+    <img src="{{url_for('static', filename='assets/img/accommodation.jpg')}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Accommodation Pickup & Dropoff Service</h5>
+      <p class="card-text" style="text-align: justify;">We are ready to make your airport-accommodation or
+        accommodation-airport travel smooth,
+        easy and stress-free.
+        We offer an affordable 24/7 pickup & dropoff services across the London, whether you need a
+        late-night pickup & dropoff services or an early-morning pickup & dropoff. The ease of travel with
+        professional drivers, clean vehicles and competitive prices will allow you to enjoy it!
+        Book your pickup & dropoff travel today and leave the rest to us!</p>
+    </div>
+  </div>
+  <div class="card border-0 shadow-sm" style="margin-right: 4%;">
+    <img src="{{url_for('static', filename='assets/img/touristSpot.jpg')}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Tourist Sites Pickup & Dropoff Service</h5>
+      <p class="card-text">
+        We are ready to make your tourist site-to-accommodation or accommodation-to-tourist site travel smooth,
+        easy and stress-free.
+        We offer an affordable 24/7 pickup & dropoff services across the London, whether you need a
+        late-night pickup & dropoff services or morning pickup & drop-off. The ease of travel with
+        professional drivers, clean vehicles and competitive prices will allow you to enjoy it!
+        Book your pickup & dropoff travel today and leave the rest to us!
+      </p>
+    </div>
+  </div>
+</div> -->
+<div class="cards-grid" style="padding-top: 4%;">
+
+  <!-- Card 1 -->
+  <div class="scard">
+    <img src="{{ url_for('static', filename='assets/img/pickupservice.webp') }}" 
+         alt="Airport Pickup/Dropoff Service"
+         style="width:100%; aspect-ratio:16/9; object-fit:cover;">
+    <div class="scard-body">
+      <span class="scard-badge">Airport</span>
+      <h3 class="scard-title">Airport Pickup/Dropoff Service</h3>
+      <p class="scard-text">
+        We are ready to make your airport transfer smooth, easy and stress-free.
+        We offer an affordable 24/7 airport transfer service across London, whether 
+        you need a late-night airport pickup or an early-morning drop-off.
+      </p>
+      <div class="scard-divider"></div>
+      <div class="scard-footer">
+        <a href="#" class="scard-link">Book now →</a>
+        <span class="scard-avail"><span class="dot"></span>24/7 available</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="scard">
+    <img src="{{ url_for('static', filename='assets/img/accommodation.jpg') }}" 
+         alt="Accommodation Pickup & Dropoff Service"
+         style="width:100%; aspect-ratio:16/9; object-fit:cover;">
+    <div class="scard-body">
+      <span class="scard-badge">Accommodation</span>
+      <h3 class="scard-title">Accommodation Pickup &amp; Dropoff Service</h3>
+      <p class="scard-text">
+        We are ready to make your airport-accommodation travel smooth, easy and 
+        stress-free. Affordable 24/7 pickup &amp; dropoff services across London, 
+        with professional drivers and competitive prices.
+      </p>
+      <div class="scard-divider"></div>
+      <div class="scard-footer">
+        <a href="#" class="scard-link">Book now →</a>
+        <span class="scard-avail"><span class="dot"></span>24/7 available</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="scard">
+    <img src="{{ url_for('static', filename='assets/img/touristSpot.jpg') }}" 
+         alt="Tourist Sites Pickup & Dropoff Service"
+         style="width:100%; aspect-ratio:16/9; object-fit:cover;">
+    <div class="scard-body">
+      <span class="scard-badge">Tourism</span>
+      <h3 class="scard-title">Tourist Sites Pickup &amp; Dropoff Service</h3>
+      <p class="scard-text">
+        We are ready to make your tourist site-to-accommodation travel smooth, easy 
+        and stress-free. Affordable 24/7 pickup &amp; dropoff services across London, 
+        morning or late-night.
+      </p>
+      <div class="scard-divider"></div>
+      <div class="scard-footer">
+        <a href="#" class="scard-link">Book now →</a>
+        <span class="scard-avail"><span class="dot"></span>24/7 available</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+<hr class="my-4" />
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="col-md-10 col-lg-8 col-xl-7">
+
+      <!-- Todo: Fetch it using for loop from the database  -->
+      <!--
+                    {% for post in posts  %}
+                    {% set fname = 'assets/img/' + post.image_path %}
+                    
+                    <div class="post-preview">
+                        <a href="/post/{{post.slug}}">
+                            <h2 class="post-title">{{post.title}}</h2>
+                            <h3 class="post-subtitle">{{post.subheadings}}</h3>
+                            <h5>Read More ...</h5>
+                        </a>
+                        <div class="text-center">
+                            <img src="{{ url_for('static', filename=fname) }}" alt="{{ post.title }}" class="img-fluid rounded" style="max-width: 100%; height: auto;">
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    <hr class="my-4" />
+                    {% endfor %}-->
+      {% for post in posts %}
+      {% set fname = 'assets/img/' + post.image_path %}
+
+      <div class="section {% if loop.index is even %}reverse{% endif %}">
+
+        <!-- Image Block -->
+        <div class="img-block">
+          <img src="{{ url_for('static', filename=fname) }}" alt="{{ post.title }}"
+            style="width:100%; height:100%; object-fit:cover;" />
+        </div>
+
+        <!-- Text Block -->
+        <div class="text-block">
+          <span class="section-tag">Post {{ loop.index }}</span>
+          <h2 class="section-title">{{ post.title }}</h2>
+          <p class="section-body">{{ post.subheadings }}</p>
+          <a href="/post/{{ post.slug }}" class="section-btn">Read More →</a>
+        </div>
+
+      </div>
+
+      {% endfor %}
+      <!-- Pager-->
+      <div class="clearfix justify-content-end mb-4">
+        {% if number != 0 %}
+        <a class="btn btn-primary text-uppercase float-left" style="margin-top: 2%;" href="{{prev}}">&larr; Previous</a>
+        {% endif %}
+        <a class="btn btn-primary text-uppercase float-right" style="margin-top: 2%;" href="{{next}}">Next &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

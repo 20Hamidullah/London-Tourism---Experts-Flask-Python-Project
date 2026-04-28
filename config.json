@@ -1,0 +1,23 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/londontouristblog",
+    "prod_uri": "mysql://root:@localhost/londontouristblog",
+    "fb_url": "",
+    "tw_url": "",
+    "website_name": "London Tourism & Experts",
+    "landing_page_heading1": "London Tour Guide",
+    "landing_page_subheading" : "Visit Famous London Tourist Sites, Try with Us!",
+    "about_page_heading1": "About Us",
+    "about_page_subheading": "This is what We do.",
+    "gmail-user": "#",
+    "gmail-password": "#",
+    "no_of_post": 4,
+    "admin_user": "admin",
+    "admin_password": "admin",
+    "admin_dashboard_heading1": "Admin Panel",
+    "admin_dashboard_subheading": "Manage Your Posts"
+
+  }
+}

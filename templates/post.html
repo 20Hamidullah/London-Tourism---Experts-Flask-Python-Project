@@ -1,0 +1,322 @@
+{% extends "layout.html" %}
+{% block body %}
+        <!-- Page Header-->
+         {% set fname = 'assets/img/' + post.image_path %}
+        <header class="masthead" style="background-image: url('   {{ url_for('static', filename=fname) }}  ')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>{{post.title}}</h1>
+                            <h2 class="subheading">{{params['BritishMuseum_subheading']}}</h2>
+                            <!--  
+                            <span class="meta">
+                                Posted by
+                                <a href="#!">Start Bootstrap</a>
+                                on August 24, 2023
+                            </span>
+                            -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        {% if post.slug == 'BritishMuseum' %}
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p style="text-align: justify;">The British Museum in London is one of the world’s most iconic cultural institutions, attracting millions of visitors each year. If you’re planning a trip to London, this must-visit destination offers an unparalleled journey through human history, art, and civilization. From the Rosetta Stone to the Elgin Marbles, the British Museum houses over 8 million works, making it a treasure trove for history buffs, art lovers, and curious travelers alike.</p>
+                        <h2>Why Visit the British Museum?</h2>
+                        <p style="text-align: justify;"><strong>1. World-Class Collections:</strong> The British Museum is home to some of the most famous artifacts in history. Marvel at the Rosetta Stone, which unlocked the secrets of ancient Egyptian hieroglyphs, or stand in awe of the intricate Parthenon Sculptures. Each gallery tells a unique story, spanning continents and centuries.</p>
+                        <p style="text-align: justify;"><strong>2. Architectural Marvel:</strong> The museum itself is a masterpiece. The Great Court, with its stunning glass roof, is the largest covered public square in Europe and a perfect spot to start your exploration.</p>
+                        <p style="text-align: justify;"><strong>3. Interactive Exhibits:</strong> The British Museum isn’t just about looking at artifacts. With interactive displays, family-friendly activities, and guided tours, it’s an engaging experience for visitors of all ages.</p>
+                        <p style="text-align: justify;"><strong>4. Central Location:</strong> Situated in the heart of London. Combine your visit with a stroll through Bloomsbury or a stop at nearby attractions like Covent Garden or the West End.</p>
+                        <h2>Top Highlights You Can’t Miss</h2>
+                        <p style="text-align: justify;">
+                            <ul>
+                                <li><strong>Egyptian Mummies:</strong> Step into the ancient world with the museum’s incredible collection of mummies and sarcophagi.</li>
+                                <li><strong>The Lewis Chessmen:</strong>These medieval chess pieces are a fascinating glimpse into the past.</li>
+                                <li><strong>Assyrian Lion Hunt Reliefs:</strong>Witness the power and artistry of the ancient Assyrian empire.</li>
+                                <li><strong>The Sutton Hoo Treasure:</strong>Explore the artifacts from one of the greatest archaeological discoveries in British history.</li>
+                            </ul>
+                        </p>
+                        <h2>Tips for Your Visit</h2>
+                        <p>
+                            <ul>
+                                <li><strong>Plan Ahead:</strong>The museum is vast, so prioritize the galleries you want to see.</li>
+                                <li><strong>Family-Friendly:</strong>Pick up a family trail map to keep kids engaged and entertained.</li>
+                                <li><strong>Avoid Crowds:</strong>Visit early in the morning or late in the afternoon for a quieter experience.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        {% endif %}
+        {% if post.slug == 'NaturalHistoryMuseumlondon'%}
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p style="text-align: justify;">The Natural History Museum in London is a must-visit destination for tourists, 
+                            offering a captivating journey through time and nature. From the awe-inspiring blue whale skeleton (Hope) 
+                            suspended in the grand Hintze Hall to the fascinating Dinosaur Gallery featuring fossils like Dippy the 
+                            Diplodocus, the museum brings history to life. Visitors can explore interactive exhibits, marvel at rare 
+                            gems in the Vault, and experience the power of Earth’s forces in the Volcanoes and Earthquakes Zone. 
+                            With free entry and endless discoveries, it’s a perfect attraction for families, history lovers, and 
+                            curious explorers alike.</p>
+                        <h2>Why Visit the Natural History Museum?</h2>
+                        <p style="text-align: justify;"><strong>1. World-Famous Dinosaur Exhibits:</strong> Stand beneath the iconic Tyrannosaurus rex and Dippy the Diplodocus skeletons.</p>
+                        <p style="text-align: justify;"><strong>2. Explore Earth's Wonders:</strong> Discover exhibits on volcanoes, earthquakes, gemstones, and prehistoric creatures.</p>
+                        <p style="text-align: justify;"><strong>3. The Magnificent Hintze Hall:</strong> Be amazed by the breathtaking blue whale skeleton "Hope" suspended from the ceiling.</p>
+                        <p style="text-align: justify;"><strong>4. Interactive & Family-Friendly:</strong> Enjoy hands-on activities, virtual reality experiences, and kid-friendly discovery zones.</p>
+                        <h2>Top Highlights You Can’t Miss</h2>
+                        <p style="text-align: justify;">
+                            <ul>
+                                <li><strong>The Vault – Rare Gemstones & Meteorites:</strong> Marvel at the world's largest diamond, ancient meteorites, and glowing minerals.</li>
+                                <li><strong>Human Evolution Gallery:</strong>Trace our ancestry with early human fossils and life-like reconstructions.</li>
+                                <li><strong>Wildlife Photographer of the Year Exhibition:</strong>Stunning nature photography from around the globe.</li>
+                                <li><strong>Earthquakes & Volcanoes Zone:</strong>Experience a simulated earthquake and explore how volcanoes shape our planet.</li>
+                            </ul>
+                        </p>
+                        <h2>Tips for Your Visit</h2>
+                        <p>
+                            <ul>
+                                <li><strong>Visit Early or Late:</strong>Arrive early in the morning or later in the afternoon to avoid peak crowds.</li>
+                                <li><strong>Plan Your Must-See Exhibits:</strong>Prioritize top attractions like the Dinosaur Gallery, Hope the Blue Whale, and The Vault.</li>
+                                <li><strong>Enjoy the Outdoor Spaces:</strong> Relax in the Darwin Centre Courtyard or the Wildlife Garden after exploring.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        {% endif %}
+        {% if post.slug == 'LondonEye'%}
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p style="text-align: justify;">
+                            The London Eye is one of the most iconic attractions in the heart of London, offering breathtaking panoramic 
+                            views of the city skyline. This giant observation wheel stands 135 meters tall and provides an unforgettable 
+                            experience for visitors. As you ascend in one of the 32 glass capsules, you can spot famous landmarks like 
+                            Big Ben, Buckingham Palace, and St. Paul’s Cathedral. Whether it’s a daytime ride to admire the cityscape 
+                            or a nighttime journey with dazzling city lights, the London Eye promises a magical perspective of London.
+                        </p>
+                        <h2>Why Visit the London Eye?</h2>
+                        <p style="text-align: justify;">
+                            <strong>1. Spectacular 360° Views:</strong> Enjoy stunning aerial views of London from the glass capsules. 
+                        </p>
+                        <p style="text-align: justify;">
+                            <strong>2. Iconic Landmark Experience:</strong> Ride one of the world's tallest observation wheels and capture 
+                            unforgettable moments. 
+                        </p>
+                        <p style="text-align: justify;">
+                            <strong>3. Perfect for All Visitors:</strong> Ideal for couples, families, and solo travelers looking for a unique 
+                            sightseeing adventure. 
+                        </p>
+                        <p style="text-align: justify;">
+                            <strong>4. Special Experiences Available:</strong> Upgrade to a VIP capsule with champagne or book a sunset ride for a 
+                            romantic experience. 
+                        </p>
+                        <h2>Top Highlights You Can’t Miss</h2>
+                        <p style="text-align: justify;">
+                            <ul>
+                                <li><strong>Unmatched Views of London:</strong> See iconic sights such as the Houses of Parliament, The Shard, and Tower Bridge.</li>
+                                <li><strong>Interactive Touchscreens:</strong> Learn about the city’s history and landmarks as you ride.</li>
+                                <li><strong>Private Capsule Experiences:</strong> Book a private capsule for a luxury sightseeing experience.</li>
+                                <li><strong>Sunset & Nighttime Rides:</strong> Witness the city transform with beautiful golden hues or sparkling night lights.</li>
+                            </ul>
+                        </p>
+                        <h2>Tips for Your Visit</h2>
+                        <p>
+                            <ul>
+                                <li><strong>Book Tickets in Advance:</strong> Save time and avoid long queues by purchasing your tickets online.</li>
+                                <li><strong>Visit at Off-Peak Hours:</strong> Early mornings and late evenings are less crowded.</li>
+                                <li><strong>Choose a Clear Day:</strong> For the best visibility, check the weather forecast before booking.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        {%endif%}
+
+        {% if post.slug == 'TowerOfLondon' %}
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p style="text-align: justify;">
+                            The Tower of London is one of the most historic landmarks in the UK, offering visitors a glimpse into centuries of 
+                            royal history, mystery, and intrigue. Built in 1066, this UNESCO World Heritage Site has served as a royal palace, 
+                            prison, and treasury. Today, it is home to the dazzling Crown Jewels and the legendary Yeoman Warders, also known 
+                            as the Beefeaters. Visitors can explore its medieval architecture, learn about its dark past, and stand in the 
+                            very place where history was made.
+                        </p>
+                        <h2>Why Visit the Tower of London?</h2>
+                        <p style="text-align: justify;">
+                            <strong>1. See the Crown Jewels:</strong> Marvel at the breathtaking collection of royal treasures, including the famous 
+                            Imperial State Crown.
+                        </p>
+                        <p style="text-align: justify;">
+                            <strong>2. Discover 1,000 Years of History:</strong> Walk through the castle where kings, queens, and prisoners once stood.
+                        </p>
+                        <p style="text-align: justify;">
+                            <strong>3. Meet the Yeoman Warders:</strong> Join a guided tour by the iconic Beefeaters and hear fascinating stories about 
+                            the Tower’s past.
+                        </p>
+                        <p style="text-align: justify;">
+                            <strong>4. Experience the Medieval Fortress:</strong> Explore the White Tower, Traitor’s Gate, and the Bloody Tower, where 
+                            historical events unfolded.
+                        </p>
+                        <h2>Top Highlights You Can’t Miss</h2>
+                        <p style="text-align: justify;">
+                            <ul>
+                                <li><strong>The Crown Jewels:</strong> Witness one of the most valuable and famous collections of royal regalia.</li>
+                                <li><strong>The White Tower:</strong> Step inside the Norman fortress that has stood for nearly a thousand years.</li>
+                                <li><strong>The Ravens of the Tower:</strong> Meet the legendary ravens, whose presence is said to protect the kingdom.</li>
+                                <li><strong>The Medieval Palace:</strong> Explore recreated royal chambers from the medieval era.</li>
+                            </ul>
+                        </p>
+                        <h2>Tips for Your Visit</h2>
+                        <p>
+                            <ul>
+                                <li><strong>Arrive Early:</strong> Visit in the morning to avoid long queues, especially for the Crown Jewels.</li>
+                                <li><strong>Join a Beefeater Tour:</strong> Enjoy entertaining and historical insights from the Yeoman Warders.</li>
+                                <li><strong>Book Tickets Online:</strong> Save time and secure your entry in advance.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>        
+        {%endif%}
+        {% if post.slug == 'TateModernMuesum'%}
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p style="text-align: justify;">
+                            Tate Modern is one of the world’s leading contemporary art museums, attracting millions of visitors each year. 
+                            Located on the banks of the River Thames in a former power station, the museum is home to groundbreaking modern 
+                            and contemporary art from renowned artists such as Picasso, Warhol, and Hockney. With free entry to its main galleries, 
+                            immersive exhibitions, and a stunning view of London from its terrace, Tate Modern is a must-visit cultural landmark.
+                        </p>
+                        <h2>Why Visit Tate Modern?</h2>
+                        <p style="text-align: justify;">
+                            <strong>1. World-Class Art Collection:</strong> Discover works from modern art legends like Monet, Dalí, and Rothko.
+                        </p>
+                        <p style="text-align: justify;">
+                            <strong>2. Iconic Industrial Architecture:</strong> Experience the unique design of this former power station turned art museum.
+                        </p>
+                        <p style="text-align: justify;">
+                            <strong>3. Free Entry to Permanent Exhibitions:</strong> Enjoy world-famous art without spending a penny.
+                        </p>
+                        <p style="text-align: justify;">
+                            <strong>4. Stunning Views of London:</strong> Head to the Tate Modern’s terrace for breathtaking panoramic city views.
+                        </p>
+                        <h2>Top Highlights You Can’t Miss</h2>
+                        <p style="text-align: justify;">
+                            <ul>
+                                <li><strong>The Turbine Hall:</strong> Witness large-scale, immersive installations in this vast industrial space.</li>
+                                <li><strong>The Blavatnik Building Viewing Platform:</strong> Enjoy a spectacular 360-degree view of London’s skyline.</li>
+                                <li><strong>Thematic Galleries:</strong> Explore art movements such as Surrealism, Pop Art, and Minimalism.</li>
+                                <li><strong>Temporary Exhibitions:</strong> Discover ever-changing exhibitions featuring contemporary artists from around the world.</li>
+                            </ul>
+                        </p>
+                        <h2>Tips for Your Visit</h2>
+                        <p>
+                            <ul>
+                                <li><strong>Visit on a Weekday:</strong> Avoid crowds by coming early on weekdays.</li>
+                                <li><strong>Explore the Nearby Bankside Area:</strong> Walk along the River Thames and visit Shakespeare’s Globe Theatre.</li>
+                                <li><strong>Check for Special Exhibitions:</strong> Some exhibitions require tickets, so book in advance.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+        {%endif%}
+        {% if post.slug == 'TowerBridgeLondon'%}
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p style="text-align: justify;">
+                            Tower Bridge, one of London’s most iconic landmarks, is a must-see for any traveler visiting the city. Spanning the River Thames, this magnificent bascule and suspension bridge offers stunning views of the city skyline, the Tower of London, and the historic riverfront. Built in 1894, Tower Bridge is not only a functional bridge but a testament to Victorian engineering. With its striking design and historical significance, it’s no wonder Tower Bridge attracts millions of visitors each year.
+                        </p>
+                        <h2>Why Visit Tower Bridge?</h2>
+                        <p style="text-align: justify;">
+                            <strong>1. Iconic Architecture:</strong> Marvel at the unique combination of bascule and suspension bridge design that defines this London landmark.
+                        </p>
+                        <p style="text-align: justify;">
+                            <strong>2. Fascinating History:</strong> Learn about the bridge’s construction, purpose, and its role in London’s development over the years.
+                        </p>
+                        <p style="text-align: justify;">
+                            <strong>3. Spectacular Views:</strong> From the glass-floored Walkways, enjoy unparalleled panoramic views of the River Thames, Tower of London, and the city’s skyline.
+                        </p>
+                        <p style="text-align: justify;">
+                            <strong>4. Educational Experience:</strong> Explore interactive exhibits and learn about the technology and engineering that make Tower Bridge an enduring symbol of London.
+                        </p>
+                        <h2>Top Highlights You Can’t Miss</h2>
+                        <p style="text-align: justify;">
+                            <ul>
+                                <li><strong>The Glass Walkways:</strong> Step onto the glass-floored walkways and look down on the bustling traffic and river below.</li>
+                                <li><strong>The Tower Bridge Exhibition:</strong> Discover the history and engineering behind the bridge through engaging displays and multimedia presentations.</li>
+                                <li><strong>Raising the Bridge:</strong> Watch as the bridge opens to allow ships to pass through, an impressive sight that happens several times a day.</li>
+                                <li><strong>The Victorian Engine Rooms:</strong> Visit the preserved engine rooms and see the machinery that was once used to raise the bridge.</li>
+                            </ul>
+                        </p>
+                        <h2>Tips for Your Visit</h2>
+                        <p>
+                            <ul>
+                                <li><strong>Arrive Early:</strong> To avoid the crowds, visit early in the morning or later in the evening when it’s quieter.</li>
+                                <li><strong>Book Tickets in Advance:</strong> Secure your tickets online for quicker access and special discounts.</li>
+                                <li><strong>Combine with Nearby Attractions:</strong> Tower Bridge is close to other landmarks like the Tower of London, Borough Market, and St. Katharine Docks, so plan to visit them together for a full day of exploration.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>        
+        {%endif%}
+        <!-- 
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p style="text-align: justify;">The British Museum in London is one of the world’s most iconic cultural institutions, attracting millions of visitors each year. If you’re planning a trip to London, this must-visit destination offers an unparalleled journey through human history, art, and civilization. From the Rosetta Stone to the Elgin Marbles, the British Museum houses over 8 million works, making it a treasure trove for history buffs, art lovers, and curious travelers alike.</p>
+                        <h2>Why Visit the British Museum?</h2>
+                        <p style="text-align: justify;"><strong>1. World-Class Collections:</strong> The British Museum is home to some of the most famous artifacts in history. Marvel at the Rosetta Stone, which unlocked the secrets of ancient Egyptian hieroglyphs, or stand in awe of the intricate Parthenon Sculptures. Each gallery tells a unique story, spanning continents and centuries.</p>
+                        <p style="text-align: justify;"><strong>2. Architectural Marvel:</strong> The museum itself is a masterpiece. The Great Court, with its stunning glass roof, is the largest covered public square in Europe and a perfect spot to start your exploration.</p>
+                        <p style="text-align: justify;"><strong>3. Interactive Exhibits:</strong> The British Museum isn’t just about looking at artifacts. With interactive displays, family-friendly activities, and guided tours, it’s an engaging experience for visitors of all ages.</p>
+                        <p style="text-align: justify;"><strong>4. Central Location:</strong> Situated in the heart of London. Combine your visit with a stroll through Bloomsbury or a stop at nearby attractions like Covent Garden or the West End.</p>
+                        <h2>Top Highlights You Can’t Miss</h2>
+                        <p style="text-align: justify;">
+                            <ul>
+                                <li><strong>Egyptian Mummies:</strong> Step into the ancient world with the museum’s incredible collection of mummies and sarcophagi.</li>
+                                <li><strong>The Lewis Chessmen:</strong>These medieval chess pieces are a fascinating glimpse into the past.</li>
+                                <li><strong>Assyrian Lion Hunt Reliefs:</strong>Witness the power and artistry of the ancient Assyrian empire.</li>
+                                <li><strong>The Sutton Hoo Treasure:</strong>Explore the artifacts from one of the greatest archaeological discoveries in British history.</li>
+                            </ul>
+                        </p>
+                        <h2>Tips for Your Visit</h2>
+                        <p>
+                            <ul>
+                                <li><strong>Plan Ahead:</strong>The museum is vast, so prioritize the galleries you want to see.</li>
+                                <li><strong>Family-Friendly:</strong>Pick up a family trail map to keep kids engaged and entertained.</li>
+                                <li><strong>Avoid Crowds:</strong>Visit early in the morning or late in the afternoon for a quieter experience.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        -->
+        
+{% endblock %}

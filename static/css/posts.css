@@ -1,0 +1,128 @@
+/* ── Reset & Base ─────────────────────────────────────── */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ── Page Wrapper ─────────────────────────────────────── */
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  /* ── Section (each post row) ──────────────────────────── */
+  .section {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 3rem 0;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .section:last-child {
+    border-bottom: none;
+  }
+
+  /* Flip layout for even posts */
+  .section.reverse {
+    flex-direction: row-reverse;
+  }
+
+  /* ── Image Block ──────────────────────────────────────── */
+  .img-block {
+    flex: 0 0 45%;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f4f4f2;
+    border: 1px solid #e0e0e0;
+  }
+
+  .img-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .img-block img:hover {
+    transform: scale(1.03);
+  }
+
+  /* ── Text Block ───────────────────────────────────────── */
+  .text-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* ── Section Tag (e.g. "Post 1") ──────────────────────── */
+  .section-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #888;
+  }
+
+  /* ── Post Title ───────────────────────────────────────── */
+  .section-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #111;
+    line-height: 1.3;
+  }
+
+  /* ── Post Subtitle / Subheading ───────────────────────── */
+  .section-body {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.75;
+  }
+
+  /* ── Read More Button ─────────────────────────────────── */
+  .section-btn {
+    align-self: flex-start;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: transparent;
+    color: #111;
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s;
+    display: inline-block;
+  }
+
+  .section-btn:hover {
+    background: #f4f4f2;
+    border-color: #aaa;
+    text-decoration: none;
+    color: #111;
+  }
+
+  /* ── Responsive: stack on mobile ──────────────────────── */
+  @media (max-width: 640px) {
+
+    .section,
+    .section.reverse {
+      flex-direction: column;
+    }
+
+    .img-block {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+
+    .section-title {
+      font-size: 22px;
+    }
+  }

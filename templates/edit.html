@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block body %}
+        <header class="masthead" style="background-image: url('     {{ url_for('static', filename='assets/img/adminheaderphoto.png') }}        ')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>{{params['admin_dashboard_heading1']}}</h1>
+                            <span class="subheading">{{params['admin_dashboard_subheading']}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <!-- Todo: Fetch it using for loop from the database  -->
+                    <h1>Basic Actions</h1>
+                    <a href="/dashboard"><button class="btn btn-primary text-uppercase">Dashboard Home</button></a>
+                    <a href="/logout"><button class="btn btn-primary text-uppercase float-right">Log Out</button></a>
+                    <hr>
+                    <h1>Add/Edit Posts</h1>
+                    <form id="editForm" method="post" action="/edit/{{ post.sno }}" enctype="multipart/form-data">
+                        <div class="form-floating">
+                            <textarea class="form-control" id="title" name="title" placeholder="Enter post title..." style="height: 12rem" required>{{ post.title if post else '' }}</textarea>
+                            <label for="title">Post Title</label>
+                            <div class="invalid-feedback">A post title is required.</div>
+                        </div>
+                        <div class="form-floating">
+                            <textarea class="form-control" id="subheadings" name="subheadings" placeholder="Enter post sub heading..." style="height: 12rem" required>{{ post.subheadings if post else '' }}</textarea>
+                            <label for="subheadings">Post Sub heading</label>
+                            <div class="invalid-feedback">A post sub heading is required.</div>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" id="slug" type="text" name="slug" value="{{ post.slug if post else '' }}" placeholder="Enter slug for post..." required />
+                            <label for="slug">Post Slug</label>
+                            <div class="invalid-feedback">A slug for the post is required.</div>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" id="image_path" type="text" name="image_path" value="{{ post.image_path if post else '' }}" placeholder="Enter image name with extension (.png, .jpg...)..." />
+                            <label for="slug">Image Name(pic.png/.jpg...)</label>
+                            <small class="text-danger">
+                                * If you change the image name, you must upload a new image file with the same name.
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="image_path">Select an Image</label>
+                            <input type="file" class="form-control-file" id="image" name="image">
+                          </div>
+                        <br />
+                        <!-- Submit Button-->
+                        <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Submit</button>
+                    </form>
+                    <hr class="my-4" />
+                </div>
+            </div>
+        </div>
+{% endblock %}

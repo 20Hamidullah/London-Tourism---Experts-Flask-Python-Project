@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Page Header-->
+<header class="masthead"
+    style="background-image: url('   {{url_for('static', filename='assets/img/aboutusheaderPhoto.jpg') }}   ')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="page-heading">
+                    <h1>{{params['about_page_heading1']}}</h1>
+                    <span class="subheading">{{params['about_page_subheading']}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</header>
+<main class="mb-4">
+    <div class="au-wrap">
+
+        <div class="au-tag">About us</div>
+        <h1 class="au-title">London's most trusted pick-and-drop service</h1>
+        <p class="au-subtitle">We are a London-based transport company dedicated to making every
+            journey smooth, safe, and stress-free — for tourists, families, and business travellers alike.
+        </p>
+
+        <div class="au-divider"></div>
+
+        <!-- Trust stats -->
+        <div class="au-stats">
+            <div class="au-stat">
+                <p class="au-stat-num">24/7</p>
+                <p class="au-stat-label">Always available</p>
+            </div>
+            <div class="au-stat">
+                <p class="au-stat-num">3+</p>
+                <p class="au-stat-label">Service types</p>
+            </div>
+            <div class="au-stat">
+                <p class="au-stat-num">100%</p>
+                <p class="au-stat-label">Vetted drivers</p>
+            </div>
+            <div class="au-stat">
+                <p class="au-stat-num">5★</p>
+                <p class="au-stat-label">Customer rating</p>
+            </div>
+        </div>
+
+        <!-- Who we are -->
+        <div class="au-section">
+            <div class="au-section-header">
+                <div class="au-icon">
+                    <i class="bi bi-people-fill"></i>
+                </div>
+                <h3 class="au-section-title">Who we are</h3>
+            </div>
+            <p class="au-section-body">We are a professional transport company operating across London,
+                built on the belief that getting from A to B should never be a source of stress. Our team
+                of experienced, fully-licensed drivers is committed to delivering a punctual, comfortable,
+                and safe experience every single time.</p>
+        </div>
+
+        <!-- What we do -->
+        <div class="au-section">
+            <div class="au-section-header">
+                <div class="au-icon">
+                    <i class="bi bi-car-front-fill"></i>
+                </div>
+                <h3 class="au-section-title">What we do</h3>
+            </div>
+            <p class="au-section-body">From airport pickups and hotel drop-offs to guided transfers
+                between London's top tourist attractions, we cover every kind of journey. Our services
+                are available around the clock, so whether you have an early-morning flight or a
+                late-night arrival, we are there when you need us.</p>
+        </div>
+
+        <!-- Why trust us -->
+        <div class="au-section">
+            <div class="au-section-header">
+                <div class="au-icon">
+                    <i class="bi bi-shield-fill-check"></i>
+                </div>
+                <h3 class="au-section-title">Why trust us</h3>
+            </div>
+            <p class="au-section-body">All our drivers are DBS-checked, fully insured, and trained
+                to the highest standards. We maintain transparent pricing with no hidden fees, and our
+                24/7 customer support means help is always just a message away.</p>
+        </div>
+
+        <!-- Trust signals -->
+        <div class="au-trust">
+            <div class="au-trust-item"><span class="au-trust-dot"></span><span class="au-trust-text">DBS-checked
+                    drivers</span></div>
+            <div class="au-trust-item"><span class="au-trust-dot"></span><span class="au-trust-text">Fully insured
+                    vehicles</span></div>
+            <div class="au-trust-item"><span class="au-trust-dot"></span><span class="au-trust-text">No hidden
+                    charges</span></div>
+            <div class="au-trust-item"><span class="au-trust-dot"></span><span class="au-trust-text">24/7 customer
+                    support</span></div>
+            <div class="au-trust-item"><span class="au-trust-dot"></span><span class="au-trust-text">Punctual &amp;
+                    reliable</span></div>
+            <div class="au-trust-item"><span class="au-trust-dot"></span><span class="au-trust-text">Competitive
+                    pricing</span></div>
+        </div>
+
+        <!-- CTA -->
+        <div class="au-cta">
+            <div>
+                <p class="au-cta-text">Ready to book your ride?</p>
+                <p class="au-cta-sub">Get in touch and we will handle the rest.</p>
+            </div>
+            <a href="/contact" class="au-cta-btn">Contact us →</a>
+        </div>
+
+    </div>
+</main>
+
+{% endblock %}
