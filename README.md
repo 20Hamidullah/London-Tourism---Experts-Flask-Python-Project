@@ -32,17 +32,17 @@ secure admin control interface for complete content management.
 |-------------|--------------------------------------|
 | Backend     | Python, Flask, SQLAlchemy            |
 | Frontend    | HTML5, CSS3, Bootstrap 5, Jinja2     |
-| Database    | SQLite / PostgreSQL                  |
+| Database    | MySQL                                |
 | Icons       | Bootstrap Icons                      |
 
 ---
 
 ## 📸 Screenshots
-![websitePreview1](screenShots/websitePreview1.png)
-![websitePreview2](screenShots/websitePreview2.png)
-![websitePreview3](screenShots/websitePreview3.png)
-![websitePreview4](screenShots/websitePreview4.png)
-![websitePreview5](screenShots/websitePreview5.png)
+![websitePreview1](screenShots/websitePreview1.PNG)
+![websitePreview2](screenShots/websitePreview2.PNG)
+![websitePreview3](screenShots/websitePreview3.PNG)
+![websitePreview4](screenShots/websitePreview4.PNG)
+![websitePreview5](screenShots/websitePreview5.PNG)
 ---
 
 ## 🚀 Getting Started
