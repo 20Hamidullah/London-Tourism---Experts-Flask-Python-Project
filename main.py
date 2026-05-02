@@ -1,4 +1,6 @@
 #from crypt import methods
+#from crypt import methods
+
 
 from flask import Flask, render_template, request, session, redirect
 from flask_sqlalchemy import SQLAlchemy
@@ -13,6 +15,18 @@ import os
 from werkzeug.utils import secure_filename
 from sympy.physics.vector.printing import params
 import math
+import os
+from groq import Groq
+from huggingface_hub import InferenceClient
+from flask import request, jsonify
+from dotenv import load_dotenv
+import logging
+
+load_dotenv()
+
+groq_client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+hf_client = InferenceClient(token=os.environ.get("HF_TOKEN"))
+
 
 with open('config.json', 'r') as c:
     params= json.load(c)["params"]
@@ -34,6 +48,64 @@ else:
     app.config["SQLALCHEMY_DATABASE_URI"] = params['prod_uri']
 # initialize the app with the extension
 db = SQLAlchemy(app)
+
+SYSTEM_INSTRUCTION = """You are a helpful assistant for London Tourism & Experts, 
+    a professional pick-and-drop transport service based in London. You help tourists with questions about airport pickups, hotel transfers,
+    tourist site transfers, pricing, availability, and booking. Always be freindly, professional and concise.
+    if asked about booking, direct users to the contact page or WhatsApp: +44..... or email: sadat....@gmail.com.
+    only anwser questions relevant to the transport service and London tourism.
+    """
+
+
+def groq_reply(user_message: str) -> str:
+    response = groq_client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        messages=[
+            {"role": "system", "content": SYSTEM_INSTRUCTION},
+            {"role": "user", "content": user_message}
+        ],
+        max_tokens=500
+    )
+    return response.choices[0].message.content.strip()
+
+
+def hf_reply(user_message: str) -> str:
+    # Use a free-tier compatible model
+    messages = [
+        {"role": "system", "content": SYSTEM_INSTRUCTION},
+        {"role": "user", "content": user_message}
+    ]
+    response = hf_client.chat_completion(
+        model="meta-llama/Meta-Llama-3-8B-Instruct",
+        messages=messages,
+        max_tokens=500
+    )
+    return response.choices[0].message.content.strip()
+
+
+def generate_with_fallback(user_message: str) -> tuple[str, str]:
+    # Providers list: Groq first (fast), Hugging Face second (stable)
+    providers = [("groq", groq_reply), ("huggingface", hf_reply)]
+
+    for name, fn in providers:
+        try:
+            return fn(user_message), name
+        except Exception as e:
+            logging.error(f"{name} failed: {e}")
+
+    return "Our booking service is currently undergoing maintenance. Please WhatsApp us for help.", "fallback"
+
+
+@app.route("/chat", methods=["POST"])
+def chat():
+    data = request.get_json(silent=True) or {}
+    user_message = (data.get("message") or "").strip()
+
+    if not user_message:
+        return jsonify({"reply": "Please send a message."}), 400
+
+    reply, provider = generate_with_fallback(user_message)
+    return jsonify({"reply": reply, "provider": provider})
 
 # The following class is used to define the database tables that we have created
 
